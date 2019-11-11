@@ -1,8 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
+import WebSocketConnection from "./WebSocketConnection";
 import "./App.css";
 
-function App() {
-  return <div className="App">App</div>;
+class App extends Component {
+  componentDidMount() {
+    this.connection = new WebSocketConnection(this.onMessage);
+  }
+
+  render() {
+    return <p>App</p>;
+  }
 }
 
 export default App;
