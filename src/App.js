@@ -24,7 +24,28 @@ class App extends Component {
   }
 
   render() {
-    return <p>{this.state.buzzed}</p>;
+    return (
+      <div className="App">
+        <div
+          className={`team-1 ${
+            this.state.buzzed
+              ? this.state.buzzed === 1
+                ? "buzzed"
+                : "not-buzzed"
+              : ""
+          }`}
+        ></div>
+        <div
+          className={`team-2 ${
+            this.state.buzzed
+              ? this.state.buzzed === 2
+                ? "buzzed"
+                : "not-buzzed"
+              : ""
+          }`}
+        ></div>
+      </div>
+    );
   }
 }
 
