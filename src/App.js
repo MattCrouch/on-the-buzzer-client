@@ -36,24 +36,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div
-          className={`team-1 ${
-            this.state.buzzed
-              ? this.state.buzzed === 1
-                ? "buzzed"
-                : "not-buzzed"
-              : ""
-          }`}
-        ></div>
-        <div
-          className={`team-2 ${
-            this.state.buzzed
-              ? this.state.buzzed === 2
-                ? "buzzed"
-                : "not-buzzed"
-              : ""
-          }`}
-        ></div>
+        <div className="Result">
+          <div
+            className={`team-1 ${
+              this.state.buzzed
+                ? this.state.buzzed === 1
+                  ? "buzzed"
+                  : "not-buzzed"
+                : ""
+            }`}
+          ></div>
+          <div
+            className={`team-2 ${
+              this.state.buzzed
+                ? this.state.buzzed === 2
+                  ? "buzzed"
+                  : "not-buzzed"
+                : ""
+            }`}
+          ></div>
+        </div>
       </div>
     );
   }

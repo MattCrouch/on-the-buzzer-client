@@ -1,26 +1,33 @@
 .App {
   height: 100vh;
+}
+
+.Result {
+  height: 100%;
   display: flex;
 }
 
-.App .team-1,
-.App .team-2 {
+.Result .team-1,
+.Result .team-2 {
   flex: 1;
-  opacity: 0.25;
+  opacity: 0.5;
+  transition: all 0.1s ease-out;
 }
 
-.App .team-1 {
-  background: blue;
+.Result .team-1 {
+  /* Vidsy blue 💁‍♂️ */
+  background: #035496;
 }
 
-.App .team-2 {
-  background: red;
+.Result .team-2 {
+  /* Vidsy red 💁‍♀️ */
+  background: #ec0640;
 }
 
-.App .buzzed {
+.Result .buzzed {
   opacity: 1;
 }
 
-.App .not-buzzed {
+.Result .not-buzzed {
   flex: 0;
 }
