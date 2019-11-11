@@ -13,6 +13,12 @@ class App extends Component {
   }
   componentDidMount() {
     this.connection = new WebSocketConnection(this.onMessage.bind(this));
+
+    document.addEventListener("keydown", this.reset.bind(this));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.reset.bind(this));
   }
 
   onMessage(data) {
@@ -21,6 +27,10 @@ class App extends Component {
     } else if (data.event === EVENTS.QUESTION_RESETTED) {
       this.setState({ buzzed: undefined });
     }
+  }
+
+  reset() {
+    this.connection.send(EVENTS.RESET_QUESTION);
   }
 
   render() {
