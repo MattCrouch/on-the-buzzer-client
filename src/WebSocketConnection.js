@@ -27,7 +27,8 @@ export class WebSocketConnection {
     const data = JSON.parse(event.data);
 
     // Set the new ID from the state passed
-    if (data.action === EVENTS.INITIAL_STATE) {
+    console.log(data, data.event);
+    if (data.event === EVENTS.INITIAL_STATE) {
       setId(data.payload.id);
     }
 
@@ -38,10 +39,10 @@ export class WebSocketConnection {
   }
 
   // Send a message to the server
-  send(action, payload) {
+  send(event, payload) {
     this.connection.send(
       JSON.stringify({
-        action,
+        event,
         payload
       })
     );
